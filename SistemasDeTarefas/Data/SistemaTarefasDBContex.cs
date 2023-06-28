@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SistemasDeTarefas.Data.Map;
 using SistemasDeTarefas.Models;
 
 namespace SistemasDeTarefas.Data
@@ -14,6 +15,8 @@ namespace SistemasDeTarefas.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new TarefaMap());
             base.OnModelCreating(modelBuilder);
         }
     }
